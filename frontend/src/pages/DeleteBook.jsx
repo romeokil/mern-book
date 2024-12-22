@@ -10,19 +10,33 @@ function DeleteBook() {
   const Navigate=useNavigate();
   const {id}=useParams();
 
-  const handleDeleteBook=()=>{
-    setloading(true)
-    axios.delete(`https://mern-book-blw9.onrender.com/books/${id}`)
-    .then(()=>{
-      setloading(false)
-      Navigate('/');
-    })
-    .catch((error)=>{
-      setloading(false)
-      // alert('Error while calling delete api calling Please check console')
-      // console.log("Error while calling delete api calling",error)
-          Navigate('/')
-    })
+  // const handleDeleteBook=()=>{
+  //   setloading(true)
+  //   axios.delete(`https://mern-book-blw9.onrender.com/books/${id}`)
+  //   .then(()=>{
+  //     setloading(false)
+  //     Navigate('/');
+  //   })
+  //   .catch((error)=>{
+  //     setloading(false)
+  //     alert('Error while calling delete api calling Please check console')
+  //     // console.log("Error while calling delete api calling",error)
+  //         Navigate('/')
+  //   })
+  // }
+
+  const handleDeleteBook=async ()=>{
+        try{
+          setloading(true);
+          await axios.delete(`https://mern-book-blw9.onrender.com/books/${id}`);
+          setloading(false);
+          Navigate('/');
+        }
+        catch(error){
+          setloading(false);
+          alert("Error while calling delete api calling ",error);
+          Navigate('/');
+        }
   }
 
   return (
