@@ -15,7 +15,7 @@ function Home() {
     const [loading, Setloading] = useState(false);
     useEffect(() => {
         Setloading(true);
-        axios.get('http://localhost:5555/books')
+        axios.get('https://mern-book-blw9.onrender.com/books')
             .then((response) => {
                 console.log(response.data.message.data);
                 setBooks(response.data.message.data);

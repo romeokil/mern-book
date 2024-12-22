@@ -16,7 +16,7 @@ const EditBook=()=> {
   useEffect(() => {
     setloading(true);
 
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://mern-book-blw9.onrender.com/books/${id}`)
     .then((response)=>{
       console.log(response.data)
       settitle(response.data.title);
@@ -39,7 +39,7 @@ const EditBook=()=> {
     };
     setloading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`,data)
+      .put(`https://mern-book-blw9.onrender.com/books/${id}`,data)
       .then(()=>{
         setloading(false);
         Navigate('/')

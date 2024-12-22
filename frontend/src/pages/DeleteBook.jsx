@@ -12,7 +12,7 @@ function DeleteBook() {
 
   const handleDeleteBook=()=>{
     setloading(true)
-    axios.delete(`http://localhost:5555/books/${id}`)
+    axios.delete(`https://mern-book-blw9.onrender.com/books/${id}`)
     .then(()=>{
       setloading(false)
       Navigate('/');

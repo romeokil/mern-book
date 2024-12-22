@@ -19,7 +19,7 @@ const CreateBook=()=> {
     };
     setloading(true);
     axios
-      .post(`http://localhost:5555/books`,data)
+      .post(`https://mern-book-blw9.onrender.com/books`,data)
       .then((response)=>{
         console.log(response.data)
         setloading(false);
