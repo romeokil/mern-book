@@ -16,7 +16,10 @@ app.use(cors());
 //     header:[GET,POST,PUT,DELETE],
 //     allowedHeader:[]
 // })
-
+app.use(cors({
+    origin: 'https://mern-book-blw9.onrender.com',
+    credentials: true
+  }));
 //For testing
 app.get('/',(req,res)=>{
     console.log(res);
